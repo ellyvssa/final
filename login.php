@@ -3,12 +3,11 @@ include 'config.php';
 if (isset($_POST['add'])){
     $nama=$_POST['nama'];
     $password=$_POST['password']; 
-    $ic=$_POST['ic'];
-    $jantina=$_POST['jantina'];
+  
 
 
-    $sql="insert into logmasuk (nama,password,ic,jantina)
-    values('$nama','$password','$ic', '$jantina' )";
+    $sql="insert into logmasuk (nama,password)
+    values('$nama','$password')";
     $result=mysqli_query($conn,$sql);
     if($result){
        echo "<script>alert('Data inserted sucsessfully');
@@ -51,21 +50,7 @@ if (isset($_POST['add'])){
     <input type="password" class="form-control"
     placeholder="Enter your password" name="password">
   </div>
-  <div class="form-group">
-    <label>IC</label>
-    <input type="text" class="form-control"
-    placeholder="Enter your IC" name="ic">
-  </div><br>
-  <div class="form-group">
-    <label>Jantina</label>
-    <select class="form-select" aria-label="Default select example" name="jantina">
-  <option selected>--Sila Pilih--</option>
-  <option value="1">Lelaki</option>
-  <option value="2">Perempuan</option>
- 
-</select>
-    
-</select>
+
   </div><br>
 
   <button type="submit" class="btn btn-primary" name="add">Add</button>
