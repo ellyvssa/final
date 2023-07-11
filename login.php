@@ -1,14 +1,14 @@
 <?php
 include 'config.php';
 if (isset($_POST['add'])){
+    $nama=$_POST['nama'];
+    $password=$_POST['password']; 
     $ic=$_POST['ic'];
-    $nama=$_POST['nama']; 
-    $hp=$_POST['hp'];
     $jantina=$_POST['jantina'];
 
 
-    $sql="insert into pekerja (ic,nama,hp,jantina)
-    values('$ic','$nama','$hp', '$jantina' )";
+    $sql="insert into logmasuk (nama,password,ic,jantina)
+    values('$nama','$password','$ic', '$jantina' )";
     $result=mysqli_query($conn,$sql);
     if($result){
        echo "<script>alert('Data inserted sucsessfully');
@@ -42,19 +42,19 @@ if (isset($_POST['add'])){
     <div class= "container my-5">
     <form method="post">
     <div class="form-group">  
-    <label>IC</label>
+    <label>NAMA</label>
     <input type="text" class="form-control"
-    placeholder="Enter your IC" name="ic" autocomplete="off">
+    placeholder="Enter your Name" name="nama" autocomplete="off">
   </div>  
   <div class="form-group">
-    <label>Nama</label>
-    <input type="text" class="form-control"
-    placeholder="Enter your name" name="nama">
+    <label>Password</label>
+    <input type="password" class="form-control"
+    placeholder="Enter your password" name="password">
   </div>
   <div class="form-group">
-    <label>HP</label>
+    <label>IC</label>
     <input type="text" class="form-control"
-    placeholder="Enter your HP" name="hp">
+    placeholder="Enter your IC" name="ic">
   </div><br>
   <div class="form-group">
     <label>Jantina</label>
