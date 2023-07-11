@@ -36,7 +36,7 @@ $result = $conn->query($sql);
                     <td><?php echo $row['no_hp']; ?></td>
                     <td><?php echo $row['jantina']; ?></td>
                     <td><a class="btn btn-info" href="update.php?id=<?php echo $row['id']; ?>
-                    ">Edit</a>&nbsp;<a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                    ">Edit</a>&nbsp;<a class="btn btn-danger" href="delete.php?id=<?php echo $row['no_kp']; ?>">Delete</a></td>
 
 
                     </tr>                      

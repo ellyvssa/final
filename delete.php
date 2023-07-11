@@ -2,7 +2,7 @@
 include "config.php"; 
 if (isset($_GET['no_kp'])) {
     $no_kp = $_GET['no_kp'];
-    $sql = "DELETE FROM `info_pekerja WHERE `nama_pekerja`='$nama_pekerja',`no_kp`='$no_kp',`no_hp`='$no_hp',`jantina`='$jantina' ";
+    $sql = "DELETE FROM `info_pekerja WHERE `no_kp`='$no_kp'";
      $result = $conn->query($sql);
      if ($result == TRUE) {
         echo "<script>alert('Data deleted sucsessfully')
